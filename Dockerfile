@@ -5,7 +5,11 @@ RUN apk update && apk upgrade && \
 
 WORKDIR /
 
-RUN git clone --recursive https://github.com/RyuKojiro/apple1.git
+#RUN git clone --recursive https://github.com/RyuKojiro/apple1.git
+
+COPY apple1.zip /
+
+RUN unzip apple1.zip
 
 RUN cd apple1 && make
 
